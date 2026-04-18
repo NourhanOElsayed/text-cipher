@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:text_cipher/core/constants/app_enums.dart';
+import 'package:text_cipher/features/caesar_cipher/screens/caesar_screen.dart';
 import 'package:text_cipher/features/home/widgets/app_drag_area.dart';
 
 import '../widgets/left_sidebar.dart';
@@ -38,7 +39,11 @@ class _MainLayoutState extends State<MainLayout> {
                     });
                   },
                 ),
-                Expanded(child: Container()),
+                Expanded(
+                  child: cipherType == CipherType.caesar
+                      ? CaesarScreen(mode: encryptionMode)
+                      : Container(),
+                ),
               ],
             ),
           ),

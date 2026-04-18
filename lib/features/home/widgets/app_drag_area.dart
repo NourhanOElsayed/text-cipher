@@ -12,9 +12,21 @@ class AppDragArea extends StatelessWidget {
       child: Container(
         height: 32,
         color: AppColors.sidebarBackground,
+
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 12),
+              child: Text(
+                'TextCipher',
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 12,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+            ),
+            const Spacer(),
             // MINIMIZE BUTTON
             IconButton(
               icon: const Icon(Icons.remove_rounded, size: 16),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   // --- Accent Colors ---
   static const Color primaryPurple = Color(0xFF6344FF);
+  static const Color secondaryPurple = Color(0xFF7863F1);
 
   // --- Background Colors ---
   static const Color sidebarBackground = Color(0xFF0D0E23);

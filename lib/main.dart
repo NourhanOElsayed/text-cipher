@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:text_cipher/features/caesar_cipher/provider/caesar_cubit.dart';
 import 'package:text_cipher/features/home/screens/main_layout.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -9,8 +11,8 @@ void main() async {
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(1100, 750),
-    minimumSize: Size(850, 600), // Prevents the user from shrinking it too much
+    size: Size(1200, 750),
+    minimumSize: Size(1200, 750),
     center: true,
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
@@ -30,12 +32,20 @@ class TextCipherApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TextCipher',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
-
-      home: MainLayout(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CaesarCubit>(
+          create: (context) {
+            return CaesarCubit();
+          },
+        ),
+      ],
+      child: MaterialApp(
+        title: 'TextCipher',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.darkTheme,
+        home: MainLayout(),
+      ),
     );
   }
 }
