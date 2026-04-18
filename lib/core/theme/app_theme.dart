@@ -18,6 +18,9 @@ class AppTheme {
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primaryPurple,
         surface: AppColors.surfaceLight,
+        onPrimary: AppColors.textPrimary,
+        onSurface: AppColors.textSecondary,
+        secondary: AppColors.sidebarBackground,
       ),
 
       textTheme: TextTheme(
@@ -35,8 +38,9 @@ class AppTheme {
         ),
         titleLarge: GoogleFonts.encodeSansSc(
           color: AppColors.textPrimary,
-          fontSize: 28,
-          fontWeight: FontWeight.w600,
+          fontSize: 22,
+          fontWeight: FontWeight.w500,
+          letterSpacing: 1.5,
         ),
       ),
 

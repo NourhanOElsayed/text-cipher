@@ -5,11 +5,11 @@ class AppColors {
   static const Color primaryPurple = Color(0xFF6344FF);
 
   // --- Background Colors ---
-  static const Color sidebarBackground = Color(0xFF11121A);
-  static const Color mainBackground = Color(0xFF1C1D26);
+  static const Color sidebarBackground = Color(0xFF0D0E23);
+  static const Color mainBackground = Color(0xFF1B1C31);
 
   // --- Surface Colors ---
-  static const Color surfaceLight = Color(0xFF2A2C39);
+  static const Color surfaceLight = Color(0xFF24253A);
 
   // --- Text Colors ---
   static const Color textPrimary = Color(0xFFFFFFFF);

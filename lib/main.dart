@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:text_cipher/features/home/screens/main_layout.dart';
+import 'package:window_manager/window_manager.dart';
 
 import 'core/theme/app_theme.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
+
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(1100, 750),
+    minimumSize: Size(850, 600), // Prevents the user from shrinking it too much
+    center: true,
+    backgroundColor: Colors.transparent,
+    skipTaskbar: false,
+    titleBarStyle: TitleBarStyle.hidden,
+  );
+
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
+
   runApp(const TextCipherApp());
 }
 
@@ -18,21 +35,7 @@ class TextCipherApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
 
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('TextCipher Engine Initialized!'),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Test Theme Button'),
-              ),
-            ],
-          ),
-        ),
-      ),
+      home: MainLayout(),
     );
   }
 }
