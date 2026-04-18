@@ -24,11 +24,20 @@ class _MainLayoutState extends State<MainLayout> {
   Widget cipherScreen() {
     switch (cipherType) {
       case CipherType.caesar:
-        return CaesarScreen(mode: encryptionMode);
+        return CaesarScreen(
+          key: ValueKey('caesar_$encryptionMode'),
+          mode: encryptionMode,
+        );
       case CipherType.vigenere:
-        return VigenereScreen(mode: encryptionMode);
+        return VigenereScreen(
+          key: ValueKey('vigenere_$encryptionMode'),
+          mode: encryptionMode,
+        );
       default:
-        return PlayfairScreen(mode: encryptionMode);
+        return PlayfairScreen(
+          key: ValueKey('playfair_$encryptionMode'),
+          mode: encryptionMode,
+        );
     }
   }
 
