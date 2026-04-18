@@ -11,7 +11,7 @@ A cross-platform desktop application built to visualize classical cryptography a
     * Monoalphabetic Cipher *(Coming Soon)*
 * **Real-time Mathematical Breakdown:** Displays the underlying modulo arithmetic for each character transformation (e.g., `H = (7 + 10) mod 26 = 17 -> R`).
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * **Framework:** [Flutter](https://flutter.dev/)
 * **Language:** Dart
