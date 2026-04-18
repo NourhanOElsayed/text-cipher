@@ -4,6 +4,7 @@ class AppColors {
   // --- Accent Colors ---
   static const Color primaryPurple = Color(0xFF6344FF);
   static const Color secondaryPurple = Color(0xFF7863F1);
+  static const Color green = Color(0xFF22502C);
 
   // --- Background Colors ---
   static const Color sidebarBackground = Color(0xFF0D0E23);

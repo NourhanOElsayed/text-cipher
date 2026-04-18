@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:text_cipher/core/constants/app_enums.dart';
 import 'package:text_cipher/features/caesar_cipher/screens/caesar_screen.dart';
 import 'package:text_cipher/features/home/widgets/app_drag_area.dart';
+import 'package:text_cipher/features/playfair_cipher/screens/playfair_screen.dart';
 import 'package:text_cipher/features/vigenere_cipher/screens/vigenere_screen.dart';
 
 import '../widgets/left_sidebar.dart';
@@ -23,7 +24,7 @@ class _MainLayoutState extends State<MainLayout> {
       case CipherType.vigenere:
         return VigenereScreen(mode: encryptionMode);
       default:
-        return Container();
+        return PlayfairScreen(mode: encryptionMode);
     }
   }
 

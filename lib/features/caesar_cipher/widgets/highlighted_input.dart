@@ -13,15 +13,20 @@ class HighlightedInput extends StatelessWidget {
     if (text.isEmpty) {
       return Text(
         "Type your input text here...",
-        style: AppTheme.cipherTextStyle.copyWith(
-          color: AppColors.textSecondary,
+        style: Theme.of(context).textTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w600,
-          fontSize: 16,
+          fontSize: 14,
         ),
       );
     }
     if (activeIndex == null || activeIndex! >= text.length) {
-      return Text(text, style: AppTheme.cipherTextStyle);
+      return Text(
+        text,
+        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+          fontWeight: FontWeight.w600,
+          fontSize: 14,
+        ),
+      );
     }
     return RichText(
       text: TextSpan(

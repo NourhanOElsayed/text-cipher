@@ -5,6 +5,7 @@ import 'package:text_cipher/features/home/screens/main_layout.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'core/theme/app_theme.dart';
+import 'features/playfair_cipher/providers/playfair_cubit.dart';
 import 'features/vigenere_cipher/providers/vigenere_cubit.dart';
 
 void main() async {
@@ -43,6 +44,11 @@ class TextCipherApp extends StatelessWidget {
         BlocProvider<VigenereCubit>(
           create: (context) {
             return VigenereCubit();
+          },
+        ),
+        BlocProvider<PlayfairCubit>(
+          create: (context) {
+            return PlayfairCubit();
           },
         ),
       ],
