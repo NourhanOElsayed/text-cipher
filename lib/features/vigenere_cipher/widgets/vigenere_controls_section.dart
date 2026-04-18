@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/constants/app_enums.dart';
-import '../../home/widgets/custom_button.dart';
-import '../provider/caesar_cubit.dart';
 import '../../../core/widgets/typewriter_equation.dart';
+import '../../home/widgets/custom_button.dart';
+import '../providers/vigenere_cubit.dart';
 
-class CaesarControlsSection extends StatelessWidget {
-  final CaesarState state;
+class VigenereControlsSection extends StatelessWidget {
+  final VigenereState state;
   final EncryptionMode mode;
 
-  const CaesarControlsSection({
+  const VigenereControlsSection({
     super.key,
     required this.state,
     required this.mode,
@@ -29,7 +29,7 @@ class CaesarControlsSection extends StatelessWidget {
               ? null
               : () {
                   FocusScope.of(context).unfocus();
-                  context.read<CaesarCubit>().processText(
+                  context.read<VigenereCubit>().processText(
                     isEncrypting: isEncrypting,
                   );
                 },

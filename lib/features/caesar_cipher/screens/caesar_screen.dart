@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_cipher/core/constants/app_enums.dart';
-import 'package:text_cipher/features/caesar_cipher/widgets/alphabet_grid.dart';
+import 'package:text_cipher/core/widgets/alphabet_grid.dart';
+import 'package:text_cipher/features/caesar_cipher/widgets/caesar_input_section.dart';
 import '../provider/caesar_cubit.dart';
 import '../widgets/caesar_controls_section.dart';
-import '../widgets/caesar_input_section.dart';
 import '../widgets/caesar_output_section.dart';
 import '../widgets/caesar_slider_section.dart';
 

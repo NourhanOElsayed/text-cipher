@@ -5,6 +5,7 @@ import 'package:text_cipher/features/home/screens/main_layout.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'core/theme/app_theme.dart';
+import 'features/vigenere_cipher/providers/vigenere_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,6 +38,11 @@ class TextCipherApp extends StatelessWidget {
         BlocProvider<CaesarCubit>(
           create: (context) {
             return CaesarCubit();
+          },
+        ),
+        BlocProvider<VigenereCubit>(
+          create: (context) {
+            return VigenereCubit();
           },
         ),
       ],
