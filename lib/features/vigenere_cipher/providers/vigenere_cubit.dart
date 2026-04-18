@@ -29,6 +29,10 @@ class VigenereCubit extends Cubit<VigenereState> {
     );
   }
 
+  void reset() {
+    emit(const VigenereState());
+  }
+
   Future<void> processText({required bool isEncrypting}) async {
     if (state.inputText.isEmpty || state.keyword.isEmpty || state.isAnimating) {
       return;

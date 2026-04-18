@@ -22,6 +22,10 @@ class CaesarCubit extends Cubit<CaesarState> {
     emit(state.copyWith(shiftKey: newKey));
   }
 
+  void reset() {
+    emit(const CaesarState());
+  }
+
   Future<void> processText({required bool isEncrypting}) async {
     if (state.inputText.isEmpty || state.isAnimating) return;
 

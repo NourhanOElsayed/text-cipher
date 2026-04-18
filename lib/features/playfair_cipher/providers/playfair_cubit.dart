@@ -33,6 +33,11 @@ class PlayfairCubit extends Cubit<PlayfairState> {
     _updateMatrixAndPairs();
   }
 
+  void reset() {
+    emit(const PlayfairState());
+    _updateMatrixAndPairs();
+  }
+
   void _updateMatrixAndPairs() {
     // 1. Determine whether to use 'I' or 'J' as the primary letter
     String rawKey = state.keyword.toUpperCase().replaceAll(
