@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_cipher/features/caesar_cipher/provider/caesar_cubit.dart';
 import 'package:text_cipher/features/home/screens/main_layout.dart';
+import 'package:text_cipher/features/monoalphabetic_cipher/provider/monoalphabetic_cubit.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'core/theme/app_theme.dart';
@@ -49,6 +50,11 @@ class TextCipherApp extends StatelessWidget {
         BlocProvider<PlayfairCubit>(
           create: (context) {
             return PlayfairCubit();
+          },
+        ),
+        BlocProvider<MonoalphabeticCubit>(
+          create: (context) {
+            return MonoalphabeticCubit();
           },
         ),
       ],

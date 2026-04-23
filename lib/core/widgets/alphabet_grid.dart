@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:text_cipher/core/constants/app_colors.dart';
 
 class AlphabetGrid extends StatelessWidget {
-  const AlphabetGrid({super.key, this.activeIndex, this.isTracing = false});
+  const AlphabetGrid({
+    super.key, 
+    this.activeIndex, 
+    this.isTracing = false,
+    this.keyAlphabet, 
+  });
 
   final int? activeIndex;
   final bool isTracing;
+  final String? keyAlphabet;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +24,11 @@ class AlphabetGrid extends StatelessWidget {
       children: List.generate(26, (index) {
         final bool isActive = activeIndex == index;
         final String letter = String.fromCharCode(index + 65);
+        
+     
+        final String bottomText = (keyAlphabet != null && keyAlphabet!.length == 26)
+            ? keyAlphabet![index]
+            : index.toString();
 
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -48,10 +59,13 @@ class AlphabetGrid extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              index.toString(),
+              bottomText,
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: AppColors.textSecondary,
-                fontSize: 12,
+                color: (keyAlphabet != null && isActive && !isTracing) 
+                    ? AppColors.primaryPurple 
+                    : AppColors.textSecondary, // Highlights the bottom letter too if active
+                fontSize: keyAlphabet != null ? 16 : 12, // Make it slightly larger if it's a letter
+                fontWeight: keyAlphabet != null ? FontWeight.w600 : FontWeight.normal,
               ),
             ),
           ],

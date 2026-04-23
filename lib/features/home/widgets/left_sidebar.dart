@@ -83,13 +83,24 @@ class LeftSidebar extends StatelessWidget {
               onPressed: () => onCipherChanged(CipherType.vigenere),
             ),
           ),
+
           const SizedBox(height: 16),
+
           SizedBox(
             width: double.infinity,
             child: CustomButton(
               isOn: currentCipher == CipherType.playfair,
               text: CipherType.playfair.cipherTitle,
               onPressed: () => onCipherChanged(CipherType.playfair),
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            width: double.infinity,
+            child: CustomButton(
+              isOn: currentCipher == CipherType.monoalphabetic,
+              text: CipherType.monoalphabetic.cipherTitle,
+              onPressed: () => onCipherChanged(CipherType.monoalphabetic),
             ),
           ),
         ],
