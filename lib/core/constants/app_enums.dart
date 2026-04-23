@@ -12,7 +12,7 @@ extension EncryptionModeExtension on EncryptionMode {
 }
 
 enum CipherType { caesar, vigenere, playfair ,
-monoalphabetic }
+monoalphabetic , hill }
 
 extension CipherTypeExtension on CipherType {
   String get cipherTitle {
@@ -25,6 +25,8 @@ extension CipherTypeExtension on CipherType {
         return 'Playfair Cipher';
       case CipherType.monoalphabetic:
         return 'Monoalphabetic Cipher';
+      case CipherType.hill:
+        return 'Hill Cipher';
     }
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_cipher/core/constants/app_enums.dart';
 import 'package:text_cipher/features/caesar_cipher/screens/caesar_screen.dart';
+import 'package:text_cipher/features/hill_cipher/provider/hill_cubit.dart';
+import 'package:text_cipher/features/hill_cipher/screens/hill_screen.dart';
 import 'package:text_cipher/features/home/widgets/app_drag_area.dart';
 import 'package:text_cipher/features/monoalphabetic_cipher/provider/monoalphabetic_cubit.dart';
 import 'package:text_cipher/features/monoalphabetic_cipher/screens/monoalphabetic_screen.dart';
@@ -41,6 +43,12 @@ class _MainLayoutState extends State<MainLayout> {
           key: ValueKey('monoalphabetic_$encryptionMode'),
           mode: encryptionMode,
         );
+case CipherType.hill:
+        return HillScreen(
+          key: ValueKey('hill_$encryptionMode'),
+          mode: encryptionMode,
+        );
+
       default:
         return PlayfairScreen(
           key: ValueKey('playfair_$encryptionMode'),
@@ -68,6 +76,7 @@ class _MainLayoutState extends State<MainLayout> {
                       context.read<VigenereCubit>().reset();
                       context.read<PlayfairCubit>().reset();
                       context.read<MonoalphabeticCubit>().reset();
+                      context.read<HillCubit>().reset();
                       // 2. Update the UI state
                       setState(() {
                         encryptionMode = newMode;
@@ -81,6 +90,7 @@ class _MainLayoutState extends State<MainLayout> {
                       context.read<VigenereCubit>().reset();
                       context.read<PlayfairCubit>().reset();
                       context.read<MonoalphabeticCubit>().reset();
+                      context.read<HillCubit>().reset();
 
                       // 2. Update the UI state
                       setState(() {
